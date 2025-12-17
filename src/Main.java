@@ -225,7 +225,16 @@ public class Main{
         int tipo = Integer.parseInt(sc.nextLine());
 
         if (tipo == 1) {
-            turma.setCalcular(new mediaPonderada());
+            System.out.println("peso da N1: ");
+            double p1 = Double.parseDouble(sc.nextLine());
+            System.out.println("Peso da N2");
+            double p2 = Double.parseDouble(sc.nextLine());
+
+            mediaPonderada mp = new mediaPonderada();
+            mp.setPesos(p1,p2);
+
+            turma.setCalcular(mp);
+
         } else if (tipo == 2) {
             turma.setCalcular(new mediaAritmetica());
         } else {
