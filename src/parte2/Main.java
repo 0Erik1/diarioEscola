@@ -1,4 +1,6 @@
-import projetoEscola.*;
+package parte2;
+
+import parte1.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -214,9 +216,6 @@ public class Main{
         int idx = Integer.parseInt(sc.nextLine());
         Disciplina disc = disciplinas.get(idx);
         turma.setDisciplina(disc);
-        turma.setProfessor(disc.getProfessor());
-
-
 
         System.out.println("Escolha o tipo de média:");
         System.out.println("1. Ponderada");
@@ -230,13 +229,13 @@ public class Main{
             System.out.println("Peso da N2");
             double p2 = Double.parseDouble(sc.nextLine());
 
-            mediaPonderada mp = new mediaPonderada();
+            MediaPonderada mp = new MediaPonderada();
             mp.setPesos(p1,p2);
 
             turma.setCalcular(mp);
 
         } else if (tipo == 2) {
-            turma.setCalcular(new mediaAritmetica());
+            turma.setCalcular(new MediaAritmetica());
         } else {
             System.out.println("Opção inválida");
             return;
@@ -367,7 +366,7 @@ public class Main{
         da.setN2(n2);
 
         // recalcula média e aprovação
-        diario.calcularMedias();
+        diario.calcularMedia();
 
 
         System.out.println("Notas atualizadas com sucesso!");
